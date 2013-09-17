@@ -10,9 +10,10 @@ BEM.DOM.decl('input', /** @lends Block.prototype */ {
 
             this.__base.apply(this, arguments);
 
-            var _this = this;
+            var _this = this,
+                clear = _this.elem('clear');
 
-            if(_this.elem('clear') && !_this.hasMod('clear', 'visibility', 'visible')) {
+            if(clear && !_this.hasMod(clear, 'visibility', 'visible')) {
                 _this.bindTo('box', 'click', function(e) {
                     _this.setMod('focused', 'yes');
                 });
